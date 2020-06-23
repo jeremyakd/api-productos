@@ -4,4 +4,5 @@ from rest_framework import serializers
 class ProductoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Producto
+        # fields = ['id', 'nombre', 'imagen', 'precio', 'descripcion']
         fields = '__all__'
