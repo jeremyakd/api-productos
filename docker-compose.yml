@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+
+    db_api:
+        image: nouchka/sqlite3
+    api-productos:
+        image: jeremyakd/api-productos:1.0.0
+        command: python manage.py runserver 0.0.0.0:3000
+        #volumes:
+        #  - .:/code
+        ports:
+        - "3000:3000"
+        depends_on:
+        - db_api
